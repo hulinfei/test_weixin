@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @parent_menu.name %>
+</p>
+
+<p>
+  <strong>Is show:</strong>
+  <%= @parent_menu.is_show %>
+</p>
+
+<%= link_to 'Edit', edit_parent_menu_path(@parent_menu) %> |
+<%= link_to 'Back', parent_menus_path %>

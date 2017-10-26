@@ -1,0 +1,27 @@
+<%= form_with(model: parent_menu, local: true) do |form| %>
+  <% if parent_menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parent_menu.errors.count, "error") %> prohibited this parent_menu from being saved:</h2>
+
+      <ul>
+      <% parent_menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :parent_menu_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_show %>
+    <%= form.check_box :is_show, id: :parent_menu_is_show %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

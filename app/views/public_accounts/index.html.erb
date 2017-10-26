@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Public Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weixin secret key</th>
+      <th>Weixin token</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @public_accounts.each do |public_account| %>
+      <tr>
+        <td><%= public_account.weixin_secret_key %></td>
+        <td><%= public_account.weixin_token %></td>
+        <td><%= link_to 'Show', public_account %></td>
+        <td><%= link_to 'Edit', edit_public_account_path(public_account) %></td>
+        <td><%= link_to 'Destroy', public_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Public Account', new_public_account_path %>

@@ -1,0 +1,32 @@
+<%= form_with(model: diymenu, local: true) do |form| %>
+  <% if diymenu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(diymenu.errors.count, "error") %> prohibited this diymenu from being saved:</h2>
+
+      <ul>
+      <% diymenu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :diymenu_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :key %>
+    <%= form.text_field :key, id: :diymenu_key %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :diymenu_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

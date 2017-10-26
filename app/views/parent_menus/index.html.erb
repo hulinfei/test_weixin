@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Parent Menus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Is show</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parent_menus.each do |parent_menu| %>
+      <tr>
+        <td><%= parent_menu.name %></td>
+        <td><%= parent_menu.is_show %></td>
+        <td><%= link_to 'Show', parent_menu %></td>
+        <td><%= link_to 'Edit', edit_parent_menu_path(parent_menu) %></td>
+        <td><%= link_to 'Destroy', parent_menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parent Menu', new_parent_menu_path %>

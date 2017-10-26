@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weixin secret key:</strong>
+  <%= @public_account.weixin_secret_key %>
+</p>
+
+<p>
+  <strong>Weixin token:</strong>
+  <%= @public_account.weixin_token %>
+</p>
+
+<%= link_to 'Edit', edit_public_account_path(@public_account) %> |
+<%= link_to 'Back', public_accounts_path %>
