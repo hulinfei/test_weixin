@@ -69,6 +69,6 @@ class SubMenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sub_menu_params
-      params.require(:sub_menu).permit(:name, :is_show)
+      params.require(:sub_menu).permit(:name, :is_show, :sort)
     end
 end

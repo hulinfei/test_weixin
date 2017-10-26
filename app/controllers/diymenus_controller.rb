@@ -25,6 +25,7 @@ class DiymenusController < ApplicationController
   # POST /diymenus.json
   def create
     @diymenu = Diymenu.new(diymenu_params)
+    $client ||= WeixinAuthorize::Client.new("wxdaaff9d80004aab6","a7339df441dee31693598a25068e1e1b")
 
     respond_to do |format|
       if $weixin_authorize.is_valid?
@@ -76,6 +77,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def diymenu_params
-      params.require(:diymenu).permit(:name, :key, :url)
+      params.require(:diymenu).permit(:name, :key, :url, :is_show, :sort)
     end
   end

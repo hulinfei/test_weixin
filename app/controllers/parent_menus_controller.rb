@@ -69,6 +69,6 @@ class ParentMenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parent_menu_params
-      params.require(:parent_menu).permit(:name, :is_show)
+      params.require(:parent_menu).permit(:name, :is_show. :sort)
     end
 end

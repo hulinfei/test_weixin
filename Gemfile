@@ -52,5 +52,5 @@ end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mongoid'
 gem 'weixin_rails_middleware', git: "https://github.com/lanrion/weixin_rails_middleware.git"
-gem 'weixin_authorize', git: "https://github.com/lanrion/weixin_authorize.git"
-gem 'redis-namespace'
+gem 'weixin_authorize'
+#gem 'redis-namespace'

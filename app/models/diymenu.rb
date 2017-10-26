@@ -3,13 +3,16 @@ class Diymenu
   field :name, type: String
   field :key, type: String
   field :url, type: String
+  field :is_show, type: Boolean, default: true
+  field :sort, type: Integer
+
 
   CLICK_TYPE = "click" # key
   VIEW_TYPE  = "view"  # url
 
   belongs_to :public_account
 
-  has_many :sub_menus, ->{where(is_show: true).order("sort").limit(5)}, class_name: "Diymenu", foreign_key: :parent_id
+  has_many :sub_menus#, ->{where(is_show: true).order("sort").limit(5)}, class_name: "Diymenu", foreign_key: :parent_menu_id
 
   def has_sub_menu?
     sub_menus.present?
